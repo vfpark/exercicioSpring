@@ -1,0 +1,34 @@
+package com.generation.farmacia.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "tb_produtos")
+public class Produto {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotBlank(message = "O atributo nome é obrigatório!")
+	private String nome;
+	
+	@NotBlank(message = "O atributo marca é obrigatório!")
+	private String marca;
+	
+	@NotNull(message = "O atributo princípio ativo é obrigatório!")
+	private String principioAtivo;
+	
+	@NotBlank(message = "O atributo preço é obrigatório!")
+	private double preco;
+	
+	@Size(max = 1000)
+	private String foto;
+	
+}
