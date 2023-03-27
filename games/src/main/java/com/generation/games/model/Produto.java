@@ -34,6 +34,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@ManyToOne
 		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
+		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
+		private Usuario usuario;
 
 		public Long getId() {
 			return id;
@@ -82,4 +86,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		public void setCategoria(Categoria categoria) {
 			this.categoria = categoria;
 		}
+		
+		public Usuario getUsuario() {
+	        return this.usuario;
+	    }
+
+	    public void setUsuario(Usuario usuario) {
+	        this.usuario = usuario;
+	    }
 }
